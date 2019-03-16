@@ -10,9 +10,16 @@ namespace GameConsole
     {
         public static void Write(PlayerCharacter player)
         {
-            Console.WriteLine(player.Name);
+            if (string.IsNullOrEmpty(player.Name))
+            {
+                Console.WriteLine("player name is null or whitespace");
+            }
+            else
+            {
+                Console.WriteLine(player.Name);
+            }
 
-            if (player.DaysSinceLastLogin == -1)
+            if (player.DaysSinceLastLogin == null)
             {
                 Console.WriteLine("No Value for DaysSinceLastLogin");
             }
@@ -21,13 +28,26 @@ namespace GameConsole
                 Console.WriteLine(player.DaysSinceLastLogin);
             }
 
-            if (player.DateOfBirth == DateTime.MinValue)
+            if (player.DateOfBirth == null)
             {
                 Console.WriteLine("No date of birth specified");
             }
             else
             {
                 Console.WriteLine(player.DateOfBirth);
+            }
+
+            if (player.IsNoob == null)
+            {
+                Console.WriteLine("player newbie status is unknown");
+            }
+            else if (player.IsNoob == true)
+            {
+                Console.WriteLine("player is newbie");
+            }
+            else
+            {
+                Console.WriteLine("player is experienced");
             }
         }
     }

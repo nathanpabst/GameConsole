@@ -10,14 +10,17 @@ namespace GameConsole
     {
         public string Name { get; set; }
 
-        public int DaysSinceLastLogin { get; set; }
+        // simplifying the name using shorthand for nullable values...same as using Nullable<int>
+        public int? DaysSinceLastLogin { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+
+        public bool? IsNoob { get; set; }
 
         public PlayerCharacter()
         {
-            DateOfBirth = DateTime.MinValue; // magic number
-            DaysSinceLastLogin = -1; // magic number
+            DateOfBirth = null;
+            DaysSinceLastLogin = null;
         }
     }
 }
