@@ -19,7 +19,12 @@ namespace GameConsole
                 Console.WriteLine(player.Name);
             }
 
-            int days = player.DaysSinceLastLogin.HasValue ? player.DaysSinceLastLogin.Value : -1;
+
+            //using the conditional operator
+            //int days = player.DaysSinceLastLogin.HasValue ? player.DaysSinceLastLogin.Value : -1;
+
+            //using the null-coalescing operator
+            int days = player.DaysSinceLastLogin ?? -1;
 
 
             //using overload method on GetValueOrDefault to specify a default value of -1
