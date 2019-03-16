@@ -10,19 +10,24 @@ namespace GameConsole
     {
         static void Main(string[] args)
         {
-            //PlayerCharacter[] players = new PlayerCharacter[3]
-            //    {
-            //        new PlayerCharacter { Name = "Sarah"},
-            //        new PlayerCharacter(), //Name = null
-            //        null // PlayerCharacter = null
-            //    };
+            PlayerCharacter sarah = new PlayerCharacter(new DiamondSkinDefense())
+            {
+                Name = "Sarah"
+            };
 
-            PlayerCharacter[] players = null;
+            PlayerCharacter amrit = new PlayerCharacter(new IronBonesDefense())
+            {
+                Name = "Amrit"
+            };
 
-            //using the null-conditional operator to reference elements in an array
-            string p1 = players?[0]?.Name;
-            string p2 = players?[1]?.Name;
-            string p3 = players?[2]?.Name;
+            PlayerCharacter gentry = new PlayerCharacter(new NullDefense())
+            {
+                Name = "Gentry"
+            };
+
+            sarah.Hit(10);
+            amrit.Hit(10);
+            gentry.Hit(10);
 
             Console.ReadLine();
         }

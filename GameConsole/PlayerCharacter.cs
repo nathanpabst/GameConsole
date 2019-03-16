@@ -8,19 +8,37 @@ namespace GameConsole
 {
     class PlayerCharacter
     {
-        public string Name { get; set; }
+        private readonly ISpecialDefense _specialDefense;
 
-        // simplifying the name using shorthand for nullable values...same as using Nullable<int>
-        public int? DaysSinceLastLogin { get; set; }
-
-        public DateTime? DateOfBirth { get; set; }
-
-        public bool? IsNoob { get; set; }
-
-        public PlayerCharacter()
+        //constructor that takes an instance of ISpecialDefense
+        public PlayerCharacter(ISpecialDefense specialDefense)
         {
-            DateOfBirth = null;
-            DaysSinceLastLogin = null;
+            _specialDefense = specialDefense;
         }
+
+        public string Name { get; set; }
+        public int Health { get; set; } = 100;
+
+        public void Hit(int damage)
+        {
+            //int damageReduction = 0;
+
+            //if (_specialDefense != null)
+            //{
+            //    damageReduction = _specialDefense.CalculateDamageReduction(damage);
+            //}
+
+
+            //int totalDamageTaken = damage - damageReduction;
+
+            //added a nullDefense class to eliminate the need to use the conditional statement above
+            int totalDamageTaken = damage - _specialDefense.CalculateDamageReduction(damage);
+
+            Health -= totalDamageTaken;
+
+            Console.WriteLine($"{Name}'s health has been reduced by {totalDamageTaken} to {Health}.");
+        }
+
+        
     }
 }
