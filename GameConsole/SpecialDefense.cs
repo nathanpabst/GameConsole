@@ -4,6 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/* BENEFITS OF USING THE NULL OBJECT PATTERN
+ * reduce runtime null ref exceptions
+ * reduce repetitive null checking code
+*/
+
+/* CONSIDERATIONS WHILE USING THE NULL OBJECT PATTERN
+ * all developers need to be aware that the null object pattern is in use
+ * all clling client code needs to agree on what "do nothing" behavior is
+ * usually not used for error handling
+ * can hide exceptions and make fault finding harder.
+ */ 
 namespace GameConsole
 {
     //refactoring from an interface to a base class
