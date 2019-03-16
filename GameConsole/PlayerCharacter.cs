@@ -8,10 +8,10 @@ namespace GameConsole
 {
     class PlayerCharacter
     {
-        private readonly ISpecialDefense _specialDefense;
+        private readonly SpecialDefense _specialDefense;
 
         //constructor that takes an instance of ISpecialDefense
-        public PlayerCharacter(ISpecialDefense specialDefense)
+        public PlayerCharacter(SpecialDefense specialDefense)
         {
             _specialDefense = specialDefense;
         }
@@ -21,17 +21,7 @@ namespace GameConsole
 
         public void Hit(int damage)
         {
-            //int damageReduction = 0;
-
-            //if (_specialDefense != null)
-            //{
-            //    damageReduction = _specialDefense.CalculateDamageReduction(damage);
-            //}
-
-
-            //int totalDamageTaken = damage - damageReduction;
-
-            //added a nullDefense class to eliminate the need to use the conditional statement above
+            
             int totalDamageTaken = damage - _specialDefense.CalculateDamageReduction(damage);
 
             Health -= totalDamageTaken;

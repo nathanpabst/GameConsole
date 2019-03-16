@@ -20,7 +20,7 @@ namespace GameConsole
                 Name = "Amrit"
             };
 
-            PlayerCharacter gentry = new PlayerCharacter(new NullDefense())
+            PlayerCharacter gentry = new PlayerCharacter(SpecialDefense.Null)
             {
                 Name = "Gentry"
             };
