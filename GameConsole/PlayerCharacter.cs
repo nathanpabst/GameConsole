@@ -10,9 +10,12 @@ namespace GameConsole
     {
         public string Name { get; set; }
 
-        public Nullable<int> DaysSinceLastLogin { get; set; }
+        // simplifying the name using shorthand for nullable values...same as using Nullable<int>
+        public int? DaysSinceLastLogin { get; set; }
 
-        public Nullable<DateTime> DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+
+        public bool? IsNoob { get; set; }
 
         public PlayerCharacter()
         {
